@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Origami Hub — Tutorials &amp; Guides</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">&#40372;</span>
+        <span class="logo-text">Origami Hub</span>
+      </div>
+      <p class="tagline">Curated tutorials for every fold, every level</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="filter-bar" aria-label="Filter tutorials">
+
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <div class="filter-pills" id="type-filters" role="group" aria-label="Filter by type">
+          <button class="pill active" data-filter="type" data-value="all">All</button>
+          <button class="pill" data-filter="type" data-value="animal">&#129438; Animal</button>
+          <button class="pill" data-filter="type" data-value="bird">&#128038; Bird</button>
+          <button class="pill" data-filter="type" data-value="flower">&#127800; Flower</button>
+          <button class="pill" data-filter="type" data-value="plant">&#127807; Plant</button>
+          <button class="pill" data-filter="type" data-value="box">&#128230; Box</button>
+          <button class="pill" data-filter="type" data-value="holiday">&#127876; Holiday</button>
+          <button class="pill" data-filter="type" data-value="abstract">&#10024; Abstract</button>
+          <button class="pill" data-filter="type" data-value="tessellation">&#128311; Tessellation</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Difficulty</span>
+        <div class="filter-pills" id="difficulty-filters" role="group" aria-label="Filter by difficulty">
+          <button class="pill active" data-filter="difficulty" data-value="all">All</button>
+          <button class="pill" data-filter="difficulty" data-value="beginner">Beginner</button>
+          <button class="pill" data-filter="difficulty" data-value="low-intermediate">Low Intermediate</button>
+          <button class="pill" data-filter="difficulty" data-value="intermediate">Intermediate</button>
+          <button class="pill" data-filter="difficulty" data-value="advanced">Advanced</button>
+        </div>
+      </div>
+
+
+      <div class="filter-actions">
+        <button id="apply-filters-btn" class="apply-filters-btn">Apply Filters</button>
+      </div>
+    </section>
+
+    <section class="results-bar">
+      <span id="results-count" class="results-count"></span>
+      <div class="sort-control">
+        <label for="sort-select">Sort by</label>
+        <select id="sort-select" aria-label="Sort tutorials">
+          <option value="relevance">Relevance</option>
+          <option value="title">Title A&ndash;Z</option>
+          <option value="difficulty-asc">Easiest first</option>
+          <option value="difficulty-desc">Hardest first</option>
+        </select>
+      </div>
+    </section>
+
+    <div id="loading" class="loading-state" aria-live="polite" hidden>
+      <div class="spinner"></div>
+      <p>Loading tutorials&hellip;</p>
+    </div>
+
+    <div id="error-state" class="error-state" hidden>
+      <p id="error-message"></p>
+    </div>
+
+    <div id="tutorial-grid" class="tutorial-grid" aria-label="Tutorial results"></div>
+
+    <div id="no-results" class="no-results" hidden>
+      <p>No tutorials found for this combination. Try a different filter.</p>
+    </div>
+
+    <div id="pagination" class="pagination" hidden></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tutorials sourced from YouTube via the YouTube Data API. All content belongs to respective creators.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
