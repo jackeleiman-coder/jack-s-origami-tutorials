@@ -2,7 +2,7 @@
 
 const YT_API_BASE = 'https://www.googleapis.com/youtube/v3/search';
 const YT_VIDEOS_BASE = 'https://www.googleapis.com/youtube/v3/videos';
-const MIN_DURATION_SECONDS = 120; // 2 minutes
+const MIN_DURATION_SECONDS = 60;// 1 minutes
 const PAGE_SIZE = 10;
 
 const SEARCH_QUERIES = {
