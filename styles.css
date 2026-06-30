@@ -1,4 +1,4 @@
-/* ── Reset & base ── */
+﻿/* ── Reset & base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -639,4 +639,39 @@ main {
     max-width: 320px;
     margin: 0 auto;
   }
+}
+
+/* ── Models page ── */
+.model-photo {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+}
+
+.models-section {
+  align-items: center;
+  gap: 3rem;
+}
+
+.models-section .about-image-side {
+  flex: 0 0 380px;
+}
+
+.models-section .about-heading {
+  font-size: 1.6rem;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .models-section .about-image-side {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+/* ── Crane section override ── */
+.models-crane {
+  gap: 1rem;
 }
